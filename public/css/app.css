@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* HERO HEADER CON IMAGEN */
+.cabecera {
+    position: relative;
+    background: url('/paisaje.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 30px;    
+}
+
+.cabecera::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.85) 100%);
+    z-index: 1;
+}
+
+.cabecera > * {
+    position: relative;
+    z-index: 2;
+}
+
+.titulo {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
+}
+
+
+/* BUSCADOR PROFESIONAL */
+.buscador {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.formulario {
+    position: relative;
+    width: 100%;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 20px 60px 20px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    color: #1e293b;
+}
+
+.formulario input::placeholder {
+    color: #94a3b8;
+}
+
+.formulario input:focus {
+    outline: none;
+}
+
+.formulario button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border: none;
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+
+
+/* SECCIÓN CIUDADES RECIENTES */
+.recientes-container {
+    width: 100%;
+}
+
+.titulorecientes {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.recientes-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.ciudadesrecientes {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 18px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 140px;
+}
+
+
+.titulociudadesrecientes {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.paisciudadesrecientes {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.temperaturaciudadrecientes {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #3b82f6;
+}
+
+/* CONTENIDO PRINCIPAL */
+.info-principal {
+    padding: 60px 20px;
+    background: #f8fafc;
+}
+
+.weather-card {
+    background: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.weather-header {
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.weather-header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #0f172a;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.weather-region {
+    display: block;
+    text-align: center;
+    color: #64748b;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.weather-date {
+    display: block;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.weather-coords,
+.weather-tz {
+    display: block;
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+}
+
+/* CLIMA PRINCIPAL - DISEÑO HORIZONTAL PROFESIONAL */
+.weather-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+
+.weather-icon {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+}
+
+.weather-temp-group {
+    text-align: left;
+}
+
+.weather-temp {
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1;
+    display: inline-block;
+}
+
+.temp-f {
+    font-size: 2rem;
+    color: #94a3b8;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.weather-condition {
+    font-size: 1.4rem;
+    color: #475569;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+/* DETALLES DEL CLIMA - GRID PROFESIONAL */
+.weather-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.weather-detail {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.weather-detail:hover {
+    background: white;
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
+}
+
+.weather-detail i {
+    font-size: 2rem;
+    color: #3b82f6;
+    width: 40px;
+    text-align: center;
+}
+
+.weather-detail-content {
+    flex: 1;
+}
+
+.weather-detail-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.weather-detail-value {
+    display: block;
+    font-size: 1.3rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+    .cabecera {
+        min-height: 60vh;
+        padding: 30px 20px;
+    }
+
+    .weather-main {
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .weather-details-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .cabecera {
+        min-height: 55vh;
+        background-attachment: scroll;
+    }
+
+    .titulo {
+        margin-bottom: 10px;
+    }
+
+    .subtitulo {
+        margin-bottom: 30px;
+    }
+
+    .buscador {
+        max-width: 90%;
+    }
+
+    .recientes-row {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .weather-card {
+        padding: 40px 25px;
+    }
+
+    .weather-main {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .weather-temp-group {
+        text-align: center;
+    }
+
+    .weather-details-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .cabecera {
+        min-height: 50vh;
+        padding: 25px 15px;
+    }
+
+    .formulario input {
+        padding: 18px 55px 18px 20px;
+        font-size: 1rem;
+    }
+
+    .formulario button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .recientes-row {
+        gap: 8px;
+    }
+
+    .ciudadesrecientes {
+        padding: 14px 18px;
+        min-width: 130px;
+    }
+
+    .titulociudadesrecientes {
+        font-size: 0.95rem;
+    }
+
+    .temperaturaciudadrecientes {
+        font-size: 1.3rem;
+    }
+
+    .info-principal {
+        padding: 40px 15px;
+    }
+
+    .weather-card {
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    .weather-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .weather-main {
+        padding: 25px 15px;
+    }
+
+    .weather-detail {
+        padding: 18px;
+        gap: 14px;
+    }
+
+    .weather-detail i {
+        font-size: 1.7rem;
+        width: 35px;
+    }
+
+    .weather-detail-value {
+        font-size: 1.1rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+    .cabecera {
+        min-height: 45vh;
+    }
+
+    .ciudadesrecientes {
+        min-width: 110px;
+        padding: 12px 14px;
+    }
+
+    .weather-details-grid {
+        gap: 12px;
+    }
+}
