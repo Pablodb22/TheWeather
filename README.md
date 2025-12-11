@@ -27,13 +27,6 @@ Una aplicación web moderna para consultar el clima de cualquier ciudad en tiemp
 - **Bootstrap Icons** – Iconografía elegante.
 - **WeatherAPI** – Datos meteorológicos en tiempo real.
 
----
 
-## ⚡ Instalación rápida
 
-1. Clona el repositorio y entra en la carpeta del proyecto.
-2. Copia `.env.example` a `.env` y añade tu clave de WeatherAPI.
-3. Instala dependencias:
-   ```sh
-   composer install
-   npm install
+
